@@ -1,0 +1,58 @@
+
+/*project plan 
+1. goal: blog system 
+2. business requirements
+    a. index page. author index page, blog
+    b. signin page 
+    c. management, new blog, edit blog
+3. technical aspect 
+    a. DB ( Blog{id, title, content, createTime,author}, User{id,psw,username,name})
+    b. API design 
+        i. get blog list: /api/blog/list (get) url_param: author/keyword
+        ii. view blog: /api/blog/detail (get) url_param:id 
+        iii. new : /api/blog/new (post)
+        iv. update: /api/blog/update (post) url_param:id 
+        v. delete: /api/blog/delete (post) url_param:id 
+        vi. signin: /api/user/login (post) 
+4.timeline 
+    a. nodejs process http requests
+    b. build developing environment 
+    c. develop interfaces.
+5. tools 
+    a. developing environment : 
+    b. nodemon: monitor file changes & automate restarting node. 检测文件变化，自动重启node
+    c. cross-env 设置环境变量  setup environmental PATH
+6. developing APIs (separate router & data processing分离路由和数据处理)
+    a. initialize router
+    b. response data
+. interview question 
+    a. get 请求处理过程
+        DNS(domain name to IP address) => establish TCP cpnnection 是否可用/可用/即将访问 => http request 
+        server receive http request =>process => response
+        client receive response, process data, render and execute JS 
+    b. post 请求（浏览器无法直接模拟，通过postman）
+    {"name":"张三"，"age":"25"} 
+    https://heidilovecoding.postman.co/workspace/My-Workspace~dd0c4f3c-3cad-40a2-8ad9-7517904c42c4/request/create?requestId=d121896c-c1f5-4345-a541-f1c93659ce64
+7 tools 
+7. router 
+    const url = req.url
+    const path = url.split('?')[0]
+    res.end(path);//返回路由
+    ROUTER: PATH?QUERY1&QUERY2
+    QUERY: key=value&key=value...
+8. 数据库
+    a. Mysql2
+        1. 建库 
+        2. 建表 
+            table user {int id,varchar(20) username,varchar(20) psw,varchar(20) name}
+            table blog {int id,varchar(50) title,longtext content, bigint(20) createtime,varchar(20) author}
+        3. 操作表SQL语句
+            CRUD
+        4. encapsulation 
+        5. API calls 
+    b.Redis store Session info. 
+    c. MongoDB
+    c. mysql workbench 操作mysql客户端（可视化操作）
+    */
+
+
